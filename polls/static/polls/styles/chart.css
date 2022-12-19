@@ -1,0 +1,19 @@
+.go-to-a {
+    margin-top: 20px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.go-to-button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: rgb(0, 0, 0, 0.2) 0px 3px 1px -2px, rgb(0, 0, 0, 0.14) 0px 2px 2px 0px, rgb(0, 0, 0, 0.12) 0px 1px 5px 0px;
+}
+
+.to-list {
+    background-color: pink;
+    margin-left: 2px;
+    margin-right: 2px;
+}

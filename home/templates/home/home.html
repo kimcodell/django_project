@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}홈{% endblock %}
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+    <h4 class="title">Django Project</h4>
+    <p class="content">설문조사, 북마크, 블로그 기능이 있습니다.</p>
+    <p class="content">상단 메뉴 바로 각 기능을 이용해 보세요.</p>
+{% endblock %}

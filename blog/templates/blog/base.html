@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!--<head>-->
+<!--    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+{% block head %}
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+{% endblock %}
+<!--</head>-->
+
+<!--<body>-->
+{% block content %}
+  <div class="page-header">
+    {% if user.is_authenticated %}
+        <a href="{% url 'blog:post_new' %}" class="top-menu">+</span></a>
+    {% endif %}
+    <h1><a href="{% url 'blog:post_list' %}">HYWU Blog</a></h1>
+  </div>
+  <div class="content container">
+    {% block contents %}
+    {% endblock %}
+  </div>
+{% endblock %}
+<!--</body>-->

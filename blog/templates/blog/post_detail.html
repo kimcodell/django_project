@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}블로그 | 상세{% endblock %}
+
+{% block contents %}
+<div class="post">
+  {% if post.published_date %}
+    <div class="date">
+      {{ post.published_date }}
+    </div>
+  {% endif %}
+  {% if user.is_authenticated %}
+    <a class="btn btn-default" href="{% url 'blog:post_edit' pk=post.pk %}">
+      <span style="border: 1px solid black; padding: 4px; border-radius: 2px; background: #F3f5F8">edit</span>
+    </a>
+  {% endif %}
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.text|linebreaksbr }}</p>
+</div>
+{% endblock %}

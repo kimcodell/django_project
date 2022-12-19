@@ -1,0 +1,9 @@
+.btn-container {
+    margin-top: 10px;
+}
+
+.to-list-btn-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail{% endblock %}
+
+
+{% block content %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'bookmark/style.css' %}">
+  <div class="to-list-btn-container">
+    <a href="{% url 'bookmark:list' %}" class="btn btn-info btn-sm">목록으로</a>
+  </div>
+  {{object.site_name}}<br/>
+  <a href="{{object.url}}" target="_blank">{{object.url}}</a>
+  <div class="btn-container">
+    <a href="{% url 'bookmark:update' pk=object.id %}" class="btn btn-success btn-sm">Modify</a>
+    <a href="{% url 'bookmark:delete' pk=object.id %}" class="btn btn-danger btn-sm">Delete</a>
+  </div>
+{% endblock %}

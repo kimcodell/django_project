@@ -1,0 +1,47 @@
+/*body {
+    background-image: url("../images/detail-background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+}*/
+
+.question {
+    text-align: center;
+}
+
+.go-to-index-a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    margin: 10px auto 30px;
+}
+
+.go-to-index-button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: pink;
+    box-shadow: rgb(0, 0, 0, 0.2) 0px 3px 1px -2px, rgb(0, 0, 0, 0.14) 0px 2px 2px 0px, rgb(0, 0, 0, 0.12) 0px 1px 5px 0px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.vote-button {
+    width: 60px;
+    padding: 4px 10px;
+    align-self: center;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  설문조사 앱 | 결과
+{% endblock %}
+
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/styles/result.css' %}">
+    <h1 class="question">{{question.question_text}}</h1>
+    <div class="result-container">
+        <ul>
+            {% for choice in question.choice_set.all %}
+            <li>{{choice.choice_text}} -- {{choice.votes}} vote{{choice.votes|pluralize}}</li>
+            {% endfor %}
+        </ul>
+        <div>
+            <a href="{% url 'polls:detail' question.id %}" class="go-to-a">
+                <span class="go-to-button revote">다시 투표</span>
+            </a>
+            <a href="{% url 'polls:index' %}" class="go-to-a">
+                <span class="go-to-button to-list">목록으로</span>
+            </a>
+            <a href="{% url 'polls:chart' question.id %}" class="go-to-a">
+                <span class="go-to-button chart">차트로 보기</span>
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirm Delete{% endblock %}
+
+{% block content %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'bookmark/style.css' %}">
+  <form action="" method="post" id="submit-form">
+    {% csrf_token %}
+    <div class="alert alert-danger">Do you want to delete Bookmark "{{ object }}"?</div>
+    <input type="button" value="Delete" class="btn btn-danger" id="submit-button">
+  </form>
+  <script>
+    const button = document.getElementById("submit-button");
+
+    button.addEventListener('click', () => {
+      if (confirm("정말 삭제 하시겠습니까?")) {
+        document.getElementById("submit-form").submit();
+      } else {
+        return false;
+      }
+    })
+  </script>
+{% endblock %}

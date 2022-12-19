@@ -1,0 +1,30 @@
+body {
+    background-color: #EFF0DE;
+}
+
+body .container {
+ width: 100%;
+ max-width: 100%;
+ padding: 0;
+}
+
+body .row {
+    margin: 10px 20%;
+}
+
+.nav-item {
+    color: #808080;
+}
+
+.nav-item:hover {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.now-page {
+    font-weight: 700;
+}
+
+body a:hover {
+    text-decoration: none;
+}

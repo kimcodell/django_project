@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}블로그 | 작성{% endblock %}
+
+{% block contents %}
+    <h1>New post</h1>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="">Save</button>
+    </form>
+{% endblock %}

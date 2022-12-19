@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  설문조사 앱 | 상세
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/styles/detail.css' %}">
+
+    <a href="{% url 'polls:index' %}" class="go-to-index-a">
+        <span class="go-to-index-button">목록으로 돌아가기</span>
+    </a>
+    <h1 class="question">{{question.question_text}}</h1>
+    {% if error_message %}<p class="error-message"><strong>{{error_message}}</strong></p>{%endif%}
+
+    <div class="form-container">
+        <form action="{% url 'polls:vote' question.id %}" method="post" class="form-box">
+            {% csrf_token %}
+            {% for choice in question.choice_set.all %}
+                <div class="choice">
+                    <input type="checkbox" name="choice" id="choice{{forloop.counter}}" value="{{choice.id}}">
+                    <label for="choice{{forloop.counter}}">{{choice.choice_text}}</label><br>
+                </div>
+            {%endfor%}
+            <input type="submit" value="Vote" class="vote-button">
+        </form>
+    </div>
+{% endblock %}

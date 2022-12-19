@@ -1,0 +1,13 @@
+.title {
+    margin: 100px auto 50px;
+    text-align: center;
+    color: #c80;
+    font-weight: bold;
+}
+
+.content {
+    color: #c80;
+    text-align: center;
+    margin: 2px;
+    opacity: 0.8;
+}
