@@ -12,10 +12,42 @@
                     <p>{{ post.text|linebreaksbr }}</p>
                 </div>
                 <div class="date">
-                    <p>published: {{ post.published_date }}</p>
+                    <p>작성일: {{ post.published_date }}</p>
                 </div>
             </div>
         </a>
         {% endfor %}
     </div>
+{% endblock %}
+
+{% block pagination %}
+    {% if is_paginated %}
+    <ul class="pagination justify-content-center pagination-sm" style="margin-top: 16px;">
+        {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="{% url 'blog:post_list' %}?page={{ page_obj.previous_page_number }}" tabindex="-1">이전</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">이전</a>
+            </li>
+        {% endif %}
+
+        {% for object in page_obj.paginator.page_range %}
+            <li class="page-item {% if page_obj.number == forloop.counter %}disabled{% endif %}">
+                <a class="page-link" href="{{ request.path }}?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+            </li>
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="{% url 'blog:post_list' %}?page={{ page_obj.next_page_number }}">다음</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#">다음</a>
+            </li>
+        {% endif %}
+        </ul>
+        {% endif %}
 {% endblock %}

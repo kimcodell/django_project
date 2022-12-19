@@ -4,16 +4,17 @@ from .models import Post
 from .forms import PostForm
 from django.views.generic.list import ListView
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    for post in posts:
-        if len(post.text) > 50:
-            post.text = post.text[:50] + '...'
-    return render(request, 'blog/post_list.html', {'posts': posts})
-
 class PostListView(ListView):
     model = Post
-    paginate_by = 4
+    paginate_by = 3
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        query_set = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+        for post in query_set:
+            if len(post.text) > 50:
+                post.text = post.text[:50] + '...'
+        return query_set
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
