@@ -8,7 +8,7 @@ h1 {
 }
 
 .page-header {
-  background-color: #ff9400;
+  background-color: #BA80FF;
   margin-top: 0;
   padding: 20px;
   border-top-left-radius: 14px;
@@ -74,6 +74,7 @@ h1 {
 .post-form textarea,
 .post-form input {
   width: 100%;
+  border-radius: 6px;
 }
 
 .button {
@@ -81,6 +82,9 @@ h1 {
   padding: 8px 16px;
   border-radius: 8px;
   box-shadow: rgb(0, 0, 0, 0.2) 0px 3px 1px -2px, rgb(0, 0, 0, 0.14) 0px 2px 2px 0px, rgb(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  color: #202020;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .save, .edit {

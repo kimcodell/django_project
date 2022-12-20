@@ -10,7 +10,7 @@
     </div>
   {% endif %}
   {% if user.is_authenticated %}
-    <a class="btn btn-default" href="{% url 'blog:post_edit' pk=post.pk %}">
+    <a href="{% url 'blog:post_edit' pk=post.pk %}">
       <span class="button edit">수정</span>
     </a>
   {% endif %}
