@@ -3,10 +3,14 @@
 {% block title %}블로그 | 작성{% endblock %}
 
 {% block contents %}
-<h1>New post</h1>
-<form method="POST" class="post-form">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="button save">작성</button>
-</form>
+    {% if form.title.value %}
+        <h1 style="margin: 10px 0;">Edit post</h1>
+    {% else %}
+        <h1 style="margin: 10px 0;">New post</h1>
+    {%  endif %}
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button save">작성</button>
+    </form>
 {% endblock %}

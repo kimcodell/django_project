@@ -14,6 +14,9 @@
                 <div class="date">
                     <p>작성일: {{ post.published_date }}</p>
                 </div>
+                {% if post.is_updated %}
+                    <p class="updated">(수정됨)</p>
+                {% endif %}
             </div>
         </a>
         {% endfor %}

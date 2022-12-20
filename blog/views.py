@@ -43,6 +43,7 @@ def post_edit(request, pk):
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
+            post.is_updated = True
             post.save()
             return redirect('blog:post_detail', pk=post.pk)
     else:
